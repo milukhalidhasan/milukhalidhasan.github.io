@@ -1,503 +1,608 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md. Khalid Hasan Milu - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Md. Khalid Hasan Milu — Agroforestry &amp; GIS Researcher</title>
+  <meta name="description" content="Md. Khalid Hasan Milu: MS candidate in Agroforestry and Environment at Gazipur Agricultural University, researching precision agriculture with UAV remote sensing, GIS and machine learning." />
+  <meta property="og:title" content="Md. Khalid Hasan Milu — Agroforestry &amp; GIS Researcher" />
+  <meta property="og:description" content="Agroforestry and environmental researcher using UAVs, GIS and machine learning for precision, climate-smart agriculture." />
+  <meta property="og:type" content="profile" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Apply saved theme before paint to avoid a flash
+    try {
+      const t = localStorage.getItem("theme");
+      if (t) document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+  <!-- IMAGES
+       images/portrait.jpg            — portrait in the hero
+       images/research/               — figures for the featured study
+       images/gallery/                — gallery photos (list is in script.js)
+       images/project-*.jpg           — project screenshots (set in script.js) -->
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="nav-container">
-                <div class="nav-links">
-                    <a href="#about">About</a>
-                    <a href="#education">Education</a>
-                    <a href="#publications">Publications</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#learning">Learning</a>
-                    <a href="#fieldwork">Field Work</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+  <div id="scroll-progress"></div>
+  <button id="back-to-top" aria-label="Back to top">↑</button>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="hero">
-            <div class="container">
-                <h1>Md. Khalid Hasan Milu</h1>
-                <p class="tagline">Agroforestry & Environmental Researcher | GIS & Remote Sensing Specialist</p>
-                <p class="subtagline">MS Candidate in Agroforestry and Environment | Precision Agriculture | UAV Technology</p>
-                <div class="social-links">
-                    <a href="https://github.com/milukhalidhasan" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/md-khalid-hasan-milu-352355145/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://scholar.google.com/citations?hl=en&user=97pu-5AAAAAJ" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                    <a href="https://orcid.org/0009-0008-5927-5814" target="_blank"><i class="fab fa-orcid"></i></a>
-                    <a href="https://www.researchgate.net/profile/Md-Khalid-Hasan-Milu" target="_blank"><i class="fab fa-researchgate"></i></a>
-                    <a href="mailto:khalid.official.98@gmail.com"><i class="fas fa-envelope"></i></a>
-                </div>
-                <div class="contact-info">
-                    <p><i class="fas fa-phone"></i> +88-01717939355</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Gazipur, Bangladesh</p>
-                </div>
-            </div>
-        </section>
+  <header class="site-header" id="site-header">
+    <nav class="nav container">
+      <a href="#top" class="logo">KH<span>.</span></a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li class="nav-gallery"><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-        <!-- About Section -->
-        <section id="about">
-            <div class="container">
-                <h2>Professional Summary</h2>
-                <div class="about-content">
-                    <p>MS candidate in Agroforestry and Environment with demonstrated research excellence in precision agriculture and UAV-based environmental monitoring. Specializing in geospatial analysis, sustainable crop management systems, and plant stress physiology through advanced GIS software (QGIS, ArcGIS, Google Earth Engine) and programming (Python, R).</p>
-                    
-                    <p>Research expertise spans environmental science, natural resource management, and remote sensing applications for agricultural and environmental sustainability. Seeking to advance interdisciplinary research in climate-smart agriculture, environmental monitoring, ecosystem management, and sustainable resource utilization using innovative remote sensing technologies, machine learning applications, and comprehensive environmental impact assessment methodologies.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education">
-            <div class="container">
-                <h2>Education</h2>
-                <div class="education-grid">
-                    <div class="education-item">
-                        <h3>Gazipur Agricultural University</h3>
-                        <p class="degree">MS, Agroforestry and Environment</p>
-                        <p class="gpa">GPA: 3.49/4.00</p>
-                        <p class="duration">Sep 2024 – Dec 2025 (Expected)</p>
-                        <p class="location">Gazipur, Bangladesh</p>
-                    </div>
-                    <div class="education-item">
-                        <h3>Gazipur Agricultural University</h3>
-                        <p class="degree">Bachelor of Science in Agriculture</p>
-                        <p class="gpa">GPA: 3.55/4.00</p>
-                        <p class="duration">Mar 2019 – May 2023</p>
-                        <p class="location">Gazipur, Bangladesh</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Publications Section -->
-        <section id="publications">
-            <div class="container">
-                <h2>Publications</h2>
-                
-                <div class="publication-category">
-                    <h3>Research Papers</h3>
-                    <div class="publication-list">
-                        <div class="publication-item">
-                            <p><strong>Milu, M. K. H.</strong>, et al. (2025). Efficiency of various herbicides for weed control in rice: A comprehensive evaluation over T. Aman and Boro seasons. <em>Manuscript submitted for publication, Bangladesh Agronomy Journal</em>.</p>
-                        </div>
-                        <div class="publication-item">
-                            <p><strong>Milu, M. K. H.</strong>, et al. (2025). Impact of seaweed extract and nitrogen fertilizer on wheat growth and yield under drought and irrigated conditions using UAV technology and machine learning approaches. <em>Manuscript in preparation</em>.</p>
-                        </div>
-                        <div class="publication-item">
-                            <p>Sen, S., Nesa, M. M., Tuhin, A. K., Tarun, J. A., Islam, M., <strong>Milu, M. K. H.</strong>, Rahman, M. F., Islam, T., & Abdullah, H. M. (2024). Early detection and wheat blast disease severity assessment using UAV multispectral image analysis. <em>Manuscript in preparation</em>.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="publication-category">
-                    <h3>Book Chapters</h3>
-                    <div class="publication-list">
-                        <div class="publication-item">
-                            <p><strong>Milu, M.K.H.</strong> et al. (2025). Revolutionizing Environmental Monitoring with Cutting-Edge Imaging Technologies. In: Saritha, V., Pande, C.B., Singh, R., Shahid, M. (eds) Remote Sensing for Environmental Monitoring. Springer, Singapore. 
-                            <a href="https://doi.org/10.1007/978-981-96-5546-5_4" target="_blank">https://doi.org/10.1007/978-981-96-5546-5_4</a></p>
-                        </div>
-                        <div class="publication-item">
-                            <p>Sen, S., Nesa, M. M., Ashiquzzaman, M., Tuhin, A., & <strong>Milu, M. K. H.</strong> (2025). Challenges of unmanned aerial systems (UAS) in crop production. <em>Book chapter under review</em>. In P. K. Srivastava, S. K. Srivastava, & G. P. Petropoulos (Eds.), <em>UAV applications in natural resources</em>. Springer.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="publication-category">
-                    <h3>Conference Presentations</h3>
-                    <div class="publication-list">
-                        <div class="publication-item">
-                            <p>Heat and drought-induced stresses monitoring in precision wheat cultivation, co-authored with Islam MS, Abdullah HM, Rahman MF, Tuhin AK, and others, presented at the 23rd National & 2nd International Conference of BSA, December 2024, Bangladesh Agricultural University, Mymensingh.</p>
-                        </div>
-                        <div class="publication-item">
-                            <p>Seaweed extract for drought mitigation in groundnut: a UAV-based remote sensing assessment, co-authored with Nesa MM, Sen S, Safa NT, and others, presented at the 23rd National & 2nd International Conference of BSA, December 2024, Bangladesh Agricultural University, Mymensingh.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects">
-            <div class="container">
-                <h2>Projects</h2>
-                <div class="project-grid">
-                    <div class="project-item">
-                        <div class="project-icon"><i class="fas fa-gamepad"></i></div>
-                        <h3>Justice Squad 3D</h3>
-                        <p class="project-type">Arcade 3D light-gun shooter &middot; Web &amp; Android</p>
-                        <p class="project-desc">A full 3D arcade shooter built from scratch with three.js - five stages,
-                            five boss fights and a final attack helicopter. Every texture, sound effect and music track is
-                            generated in code at runtime, so the whole game is under 1 MB and runs offline.</p>
-                        <p class="project-tech">three.js &middot; JavaScript &middot; WebGL &middot; Android (WebView)</p>
-                        <div class="project-links">
-                            <a class="project-btn primary" href="https://milukhalidhasan.github.io/justice-squad/" target="_blank"><i class="fas fa-play"></i> Play the game</a>
-                            <a class="project-btn" href="https://github.com/milukhalidhasan/justice-squad" target="_blank"><i class="fab fa-github"></i> Source code</a>
-                            <a class="project-btn" href="https://milukhalidhasan.github.io/justice-squad/releases/JusticeSquad-2.2.2.apk"><i class="fas fa-download"></i> Android APK</a>
-                        </div>
-                    </div>
-                    <div class="project-item">
-                        <div class="project-icon"><i class="fas fa-magnifying-glass"></i></div>
-                        <h3>Khalid's Treasure Hunt</h3>
-                        <p class="project-type">Children's 3D game &middot; English &amp; Bengali &middot; Web &amp; Android</p>
-                        <p class="project-desc">A treasure hunt for children set inside a 3D model of a village house I designed.
-                            Walk through the rooms, the verandah and the yard with Khalid and his dog Bhulu to find the hidden
-                            things, in English or বাংলা. The repository also holds the full house plan the game is built on -
-                            floor-plan drawings, printable PDFs and the design notes.</p>
-                        <p class="project-tech">three.js &middot; JavaScript &middot; Python &middot; Android (WebView)</p>
-                        <div class="project-links">
-                            <a class="project-btn primary" href="https://milukhalidhasan.github.io/khalids-hunt/" target="_blank"><i class="fas fa-play"></i> Play the game</a>
-                            <a class="project-btn" href="https://github.com/milukhalidhasan/khalids-hunt" target="_blank"><i class="fab fa-github"></i> Source code</a>
-                            <a class="project-btn" href="https://milukhalidhasan.github.io/khalids-hunt/village-house-plan.html" target="_blank"><i class="fas fa-ruler-combined"></i> House plan</a>
-                            <a class="project-btn" href="https://milukhalidhasan.github.io/khalids-hunt/releases/Khalids-Hunt.apk"><i class="fas fa-download"></i> Android APK</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience">
-            <div class="container">
-                <h2>Professional Experience</h2>
-                
-                <div class="experience-item">
-                    <h3>Graduate Research Assistant</h3>
-                    <p class="company">GIS and Remote Sensing Lab, Gazipur Agricultural University</p>
-                    <p class="duration">Apr 2024 – Present | Gazipur, Bangladesh</p>
-                    <ul>
-                        <li>Assisting in UAV-based crop monitoring and precision agriculture research using Pix4D and Emlid Flow for flight planning and data processing</li>
-                        <li>Conducting geospatial analysis (NDVI, EVI) using QGIS, ArcGIS, and Google Earth Engine to assess crop health and environmental conditions</li>
-                        <li>Contributing to sustainable agricultural practices through advanced remote sensing technologies</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <h3>Teaching Assistant</h3>
-                    <p class="company">GIS and Remote Sensing Lab, Gazipur Agricultural University</p>
-                    <p class="duration">Apr 2024 – Present | Gazipur, Bangladesh</p>
-                    <ul>
-                        <li>Assisting undergraduate and MS students with fundamental GIS and remote sensing procedures</li>
-                        <li>Providing technical support for QGIS, ArcGIS, Google Earth Engine, and Pix4D</li>
-                        <li>Guiding students in UAV-based crop monitoring, drone piloting, and image processing</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <h3>Director</h3>
-                    <p class="company">Hasan's Window Educational Platform</p>
-                    <p class="duration">Jan 2016 – Present | Rangpur, Bangladesh</p>
-                    <ul>
-                        <li>Leading an online and offline educational platform providing comprehensive tutoring across multiple levels</li>
-                        <li>Conducting specialized courses on GIS and remote sensing fundamentals for sustainable environmental monitoring</li>
-                        <li>Offering international online courses through Google Meet for global students</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Learning Section -->
-        <section id="learning">
-            <div class="container">
-                <h2>Certifications & Training</h2>
-                
-                <div class="learning-grid">
-                    <div class="learning-item">
-                        <div class="learning-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>Introduction to GIS Programming</h3>
-                        <p class="learning-org">Qiusheng Wu - Gazipur Agricultural University</p>
-                        <p class="learning-duration">July 2025 - Present</p>
-                        <p class="learning-desc">Foundational programming techniques for GIS applications, scripting, automation, and spatial data processing using Python.</p>
-                    </div>
-
-                    <div class="learning-item">
-                        <div class="learning-icon">
-                            <i class="fas fa-drone"></i>
-                        </div>
-                        <h3>DJI Matrice 350 RTK & Lidar Training</h3>
-                        <p class="learning-org">GIS and Remote Sensing Lab, GAU</p>
-                        <p class="learning-duration">July 2024</p>
-                        <p class="learning-desc">Hands-on training with DJI Matrice 350 RTK drone, lidar sensor technology, flight planning, data acquisition, and 3D modeling.</p>
-                    </div>
-
-                    <div class="learning-item">
-                        <div class="learning-icon">
-                            <i class="fas fa-map"></i>
-                        </div>
-                        <h3>Coordinate Reference Systems & Projections</h3>
-                        <p class="learning-org">Geo University (Certificate ID: dktud6av65)</p>
-                        <p class="learning-duration">August 14, 2025</p>
-                        <p class="learning-desc">Expertise in coordinate systems, map projections, and spatial data representation techniques in GIS.</p>
-                    </div>
-
-                    <div class="learning-item">
-                        <div class="learning-icon">
-                            <i class="fas fa-satellite"></i>
-                        </div>
-                        <h3>Introduction to Lidar</h3>
-                        <p class="learning-org">National Oceanic and Atmospheric Administration (NOAA)</p>
-                        <p class="learning-duration">May 14, 2024</p>
-                        <p class="learning-desc">Fundamentals of LiDAR technology and applications for high-precision geospatial data collection and analysis.</p>
-                    </div>
-
-                    <div class="learning-item">
-                        <div class="learning-icon">
-                            <i class="fas fa-camera"></i>
-                        </div>
-                        <h3>Orthorectification of Aerial Imagery</h3>
-                        <p class="learning-org">Geo University (Certificate ID: adlbrx3m7y)</p>
-                        <p class="learning-duration">May 29, 2024</p>
-                        <p class="learning-desc">Processing and correcting aerial imagery to create accurate geospatial data for mapping applications.</p>
-                    </div>
-
-                    <div class="learning-item">
-                        <div class="learning-icon">
-                            <i class="fas fa-satellite-dish"></i>
-                        </div>
-                        <h3>Sentinel Hub Webinar Series</h3>
-                        <p class="learning-org">Geo University (Certificate ID: hfcbwrxu8r)</p>
-                        <p class="learning-duration">August 14, 2025</p>
-                        <p class="learning-desc">Practical knowledge in utilizing Sentinel Hub for remote sensing and satellite data analysis in geospatial projects.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Field Work Section -->
-        <section id="fieldwork">
-            <div class="container">
-                <h2>Field Work & Research</h2>
-                
-                <div class="fieldwork-grid">
-                    <div class="fieldwork-item">
-                        <div class="fieldwork-icon">
-                            <i class="fas fa-wheat-alt"></i>
-                        </div>
-                        <h3>Precision Wheat Cultivation</h3>
-                        <p class="fieldwork-location">Research Fields, Gazipur Agricultural University</p>
-                        <p class="fieldwork-duration">2024 - Present</p>
-                        <ul class="fieldwork-details">
-                            <li>Monitoring heat and drought-induced stresses in wheat cultivation</li>
-                            <li>UAV-based multispectral imaging for crop health assessment</li>
-                            <li>Data collection for machine learning model development</li>
-                        </ul>
-                    </div>
-
-                    <div class="fieldwork-item">
-                        <div class="fieldwork-icon">
-                            <i class="fas fa-seedling"></i>
-                        </div>
-                        <h3>Seaweed Extract Research</h3>
-                        <p class="fieldwork-location">Experimental Plots, GAU</p>
-                        <p class="fieldwork-duration">2024</p>
-                        <ul class="fieldwork-details">
-                            <li>Field assessment of seaweed extract for drought mitigation in groundnut</li>
-                            <li>UAV-based remote sensing for plant stress monitoring</li>
-                            <li>Yield performance evaluation under different treatment conditions</li>
-                        </ul>
-                    </div>
-
-                    <div class="fieldwork-item">
-                        <div class="fieldwork-icon">
-                            <i class="fas fa-corn"></i>
-                        </div>
-                        <h3>Maize Variety Trials</h3>
-                        <p class="fieldwork-location">Research Station, Gazipur</p>
-                        <p class="fieldwork-duration">2024</p>
-                        <ul class="fieldwork-details">
-                            <li>UAV-based monitoring of eight promising maize varieties</li>
-                            <li>Drought condition assessment using multispectral imaging</li>
-                            <li>Yield performance analysis and variety selection</li>
-                        </ul>
-                    </div>
-
-                    <div class="fieldwork-item">
-                        <div class="fieldwork-icon">
-                            <i class="fas fa-virus"></i>
-                        </div>
-                        <h3>Wheat Blast Disease Monitoring</h3>
-                        <p class="fieldwork-location">Agricultural Fields, Bangladesh</p>
-                        <p class="fieldwork-duration">2024</p>
-                        <ul class="fieldwork-details">
-                            <li>Early detection of wheat blast disease using UAV technology</li>
-                            <li>Disease severity assessment through multispectral analysis</li>
-                            <li>Field data collection for disease progression modeling</li>
-                        </ul>
-                    </div>
-
-                    <div class="fieldwork-item">
-                        <div class="fieldwork-icon">
-                            <i class="fas fa-tint"></i>
-                        </div>
-                        <h3>Herbicide Efficiency Trials</h3>
-                        <p class="fieldwork-location">Rice Fields, Bangladesh</p>
-                        <p class="fieldwork-duration">2023-2024</p>
-                        <ul class="fieldwork-details">
-                            <li>Comprehensive evaluation of various herbicides for weed control in rice</li>
-                            <li>Seasonal assessment over T. Aman and Boro seasons</li>
-                            <li>Field data collection and yield impact analysis</li>
-                        </ul>
-                    </div>
-
-                    <div class="fieldwork-item">
-                        <div class="fieldwork-icon">
-                            <i class="fas fa-tree"></i>
-                        </div>
-                        <h3>Agroforestry Systems Research</h3>
-                        <p class="fieldwork-location">Various Field Sites</p>
-                        <p class="fieldwork-duration">2024-Present</p>
-                        <ul class="fieldwork-details">
-                            <li>Field studies on agroforestry species interactions</li>
-                            <li>Environmental impact assessment of different systems</li>
-                            <li>Soil and water conservation practices evaluation</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills">
-            <div class="container">
-                <h2>Technical Skills</h2>
-                
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Programming Languages</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">R</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">Julia</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Geospatial Software</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Pix4D</span>
-                            <span class="skill-tag">QGIS</span>
-                            <span class="skill-tag">ArcGIS Pro</span>
-                            <span class="skill-tag">Google Earth Engine</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Simulation & Analysis</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">DSSAT</span>
-                            <span class="skill-tag">Machine Learning</span>
-                            <span class="skill-tag">Statistical Analysis</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Tools & Platforms</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Adobe Illustrator</span>
-                            <span class="skill-tag">LaTeX/Overleaf</span>
-                            <span class="skill-tag">MS Excel</span>
-                            <span class="skill-tag">UAV Operations</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Awards Section -->
-        <section id="awards">
-            <div class="container">
-                <h2>Awards & Achievements</h2>
-                <div class="awards-list">
-                    <div class="award-item">
-                        <h3>National Science and Technology Fellowship</h3>
-                        <p>Ministry of Science and Technology, Government of Bangladesh (2024)</p>
-                    </div>
-                    <div class="award-item">
-                        <h3>General Merit Scholarship</h3>
-                        <p>Gazipur Agricultural University (2019-2025)</p>
-                    </div>
-                    <div class="award-item">
-                        <h3>1st Runner-up - Poster Showcase</h3>
-                        <p>Climate Smart Agriculture Quest 2023, Gazipur Agricultural University</p>
-                    </div>
-                    <div class="award-item">
-                        <h3>Rangpur District Champion</h3>
-                        <p>37th National Science & Technology Fair 2016, Ministry of Science and Technology</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <div class="container">
-                <h2>Contact & References</h2>
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h3>Get In Touch</h3>
-                        <div class="contact-details">
-                            <p><i class="fas fa-envelope"></i> khalid.official.98@gmail.com</p>
-                            <p><i class="fas fa-phone"></i> +88-01717939355</p>
-                            <p><i class="fas fa-map-marker-alt"></i> Gazipur, Bangladesh</p>
-                        </div>
-                        <div class="contact-links-full">
-                            <a href="https://github.com/milukhalidhasan" class="contact-link" target="_blank">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="https://www.linkedin.com/in/md-khalid-hasan-milu-352355145/" class="contact-link" target="_blank">
-                                <i class="fab fa-linkedin"></i> LinkedIn
-                            </a>
-                            <a href="https://scholar.google.com/citations?hl=en&user=97pu-5AAAAAJ" class="contact-link" target="_blank">
-                                <i class="fas fa-graduation-cap"></i> Google Scholar
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="references">
-                        <h3>References</h3>
-                        <div class="reference-item">
-                            <h4>Hasan M Abdullah, PhD</h4>
-                            <p>Associate Professor, Dept. of Agroforestry and Environment</p>
-                            <p>Gazipur Agricultural University, Bangladesh</p>
-                            <p>Email: hasan.abdullah@gau.edu.bd</p>
-                            <p>Contact: +8801767695926</p>
-                            <p><em>Research Supervisor</em></p>
-                        </div>
-                        <div class="reference-item">
-                            <h4>Md. Farhadur Rahman, PhD</h4>
-                            <p>Assistant Professor, Dept. of Remote Sensing and GIS</p>
-                            <p>Gazipur Agricultural University, Bangladesh</p>
-                            <p>Email: farhad.rsgis@gau.edu.bd</p>
-                            <p>Contact: +8801722778108</p>
-                            <p><em>Thesis Co-supervisor</em></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Md. Khalid Hasan Milu. Built with GitHub Pages.</p>
+  <main id="top">
+    <!-- ═══════ HERO ═══════ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="hero-tag"><span class="dot"></span> Open to research collaboration</p>
+          <h1>Hi, I'm <span class="grad">Khalid Hasan Milu</span></h1>
+          <h2 class="typed" data-words='["Agroforestry Researcher","GIS & Remote Sensing","UAV Crop Monitoring","Precision Agriculture"]'>Agroforestry Researcher</h2>
+          <p class="lead">
+            MS candidate in Agroforestry and Environment, using drones, satellite imagery and
+            machine learning to monitor crop health and plant stress for climate-smart agriculture.
+          </p>
+          <div class="hero-chips">
+            <span class="chip">📍 Gazipur, Bangladesh</span>
+            <span class="chip">🎓 Gazipur Agricultural University</span>
+          </div>
+          <div class="hero-actions">
+            <a href="#research" class="btn btn-primary">Explore my research</a>
+            <a href="#publications" class="btn btn-ghost">Publications</a>
+          </div>
         </div>
-    </footer>
+        <div class="hero-portrait">
+          <div class="portrait-frame">
+            <span class="ph-text">KH</span>
+            <img src="images/portrait.jpg" alt="Portrait of Md. Khalid Hasan Milu" onerror="this.remove()" />
+          </div>
+          <div class="float-card fc-1"><strong>7</strong><span>Research outputs</span></div>
+          <div class="float-card fc-2"><strong>🛰️</strong><span>UAV &amp; GIS</span></div>
+        </div>
+      </div>
+      <!-- Decorative drone survey: plots and positions are set by script.js; colours are illustrative, not data -->
+      <div class="scan" aria-hidden="true">
+        <svg id="scan-svg">
+          <defs>
+            <linearGradient id="beam-grad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#dcf36b" stop-opacity="0.34" />
+              <stop offset="0.75" stop-color="#dcf36b" stop-opacity="0.1" />
+              <stop offset="1" stop-color="#dcf36b" stop-opacity="0.3" />
+            </linearGradient>
+            <linearGradient id="shell-grad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#4a5056" />
+              <stop offset="1" stop-color="#23272b" />
+            </linearGradient>
+            <radialGradient id="lens-grad" cx="0.35" cy="0.35" r="0.7">
+              <stop offset="0" stop-color="#9fd3ff" />
+              <stop offset="0.45" stop-color="#1d3b5c" />
+              <stop offset="1" stop-color="#05080b" />
+            </radialGradient>
+            <clipPath id="scan-clip"><rect id="scan-reveal" x="0" y="0" width="0" height="4000" /></clipPath>
+          </defs>
+          <rect class="scan-bed" x="20" y="0" width="100" height="70" rx="10" />
+          <g id="plots-rgb"></g>
+          <g id="plots-vi" clip-path="url(#scan-clip)"></g>
+          <polygon id="beam" fill="url(#beam-grad)" points="0,0 0,0 0,0 0,0" />
+          <line id="scan-line" x1="0" y1="0" x2="0" y2="0" />
+          <g id="drone">
+            <g id="drone-art">
+              <!-- rear rotors -->
+              <ellipse class="prop prop-rear" cx="-46" cy="-24" rx="36" ry="3.2" />
+              <ellipse class="prop prop-rear" cx="46" cy="-24" rx="36" ry="3.2" />
+              <!-- arms -->
+              <path class="arm" d="M-20 -6 L-66 -16 M20 -6 L66 -16" />
+              <path class="arm arm-rear" d="M-14 -10 L-46 -20 M14 -10 L46 -20" />
+              <!-- motors -->
+              <rect class="motor" x="-72" y="-22" width="12" height="9" rx="2" />
+              <rect class="motor" x="60" y="-22" width="12" height="9" rx="2" />
+              <rect class="motor" x="-51" y="-25" width="10" height="7" rx="2" />
+              <rect class="motor" x="41" y="-25" width="10" height="7" rx="2" />
+              <!-- front rotors -->
+              <ellipse class="prop" cx="-66" cy="-24" rx="40" ry="3.6" />
+              <ellipse class="prop" cx="66" cy="-24" rx="40" ry="3.6" />
+              <!-- RTK antennas -->
+              <path class="mast" d="M-13 -14 L-13 -31 M13 -14 L13 -31" />
+              <rect class="rtk" x="-20" y="-35" width="14" height="5" rx="2" />
+              <rect class="rtk" x="6" y="-35" width="14" height="5" rx="2" />
+              <!-- landing gear -->
+              <path class="gear" d="M-14 8 L-32 40 M14 8 L32 40 M-44 40 L-20 40 M20 40 L44 40" />
+              <!-- body -->
+              <rect class="body" x="-27" y="-16" width="54" height="26" rx="9" />
+              <rect class="shell" x="-23" y="-18" width="46" height="9" rx="4.5" fill="url(#shell-grad)" />
+              <rect class="sensor" x="-17" y="-4" width="11" height="4" rx="2" /><rect class="sensor" x="6" y="-4" width="11" height="4" rx="2" />
+              <rect class="status" x="-4" y="5" width="8" height="2" rx="1" />
+              <!-- gimbal payload -->
+              <rect class="gimbal" x="-7" y="10" width="14" height="7" rx="2" />
+              <rect class="payload" x="-12" y="16" width="24" height="19" rx="6" />
+              <circle cx="0" cy="25.5" r="6.5" fill="url(#lens-grad)" />
+              <!-- navigation lights -->
+              <circle class="nav nav-l" cx="-72" cy="-12" r="2.4" />
+              <circle class="nav nav-r" cx="72" cy="-12" r="2.4" />
+            </g>
+            <g class="scan-tag" transform="translate(84,-30)">
+              <rect width="96" height="20" rx="10" />
+              <circle cx="12" cy="10" r="3.5" class="rec" />
+              <text x="54" y="13.5" text-anchor="middle">Multispectral</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- ═══════ STATS BAR ═══════ -->
+    <div class="stats-bar">
+      <div class="container stats-inner">
+        <div class="stat"><span class="stat-ic">📄</span><div><strong class="counter" data-target="7">7</strong><span>Research outputs</span></div></div>
+        <div class="stat"><span class="stat-ic">🌱</span><div><strong class="counter" data-target="6">6</strong><span>Field studies</span></div></div>
+        <div class="stat"><span class="stat-ic">📜</span><div><strong class="counter" data-target="6">6</strong><span>Certifications</span></div></div>
+        <div class="stat"><span class="stat-ic">🏅</span><div><strong class="counter" data-target="4">4</strong><span>Awards</span></div></div>
+      </div>
+    </div>
+
+    <!-- ═══════ MARQUEE ═══════ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>QGIS</span><span class="o">Google Earth Engine</span><span>ArcGIS Pro</span><span class="o">Pix4D</span><span>Python</span><span class="o">R</span><span>UAV Mapping</span><span class="o">LiDAR</span><span>Machine Learning</span><span class="o">DSSAT</span>
+        <span>QGIS</span><span class="o">Google Earth Engine</span><span>ArcGIS Pro</span><span class="o">Pix4D</span><span>Python</span><span class="o">R</span><span>UAV Mapping</span><span class="o">LiDAR</span><span>Machine Learning</span><span class="o">DSSAT</span>
+      </div>
+    </div>
+
+    <!-- ═══════ ABOUT ═══════ -->
+    <section id="about" class="section container">
+      <div class="about-grid">
+        <div class="reveal">
+          <span class="section-label">01 — About</span>
+          <h2 class="section-title">Reading crops from the sky</h2>
+        </div>
+        <div class="reveal">
+          <p class="big-p">
+            I'm an MS candidate in Agroforestry and Environment researching precision agriculture
+            and UAV-based environmental monitoring.
+          </p>
+          <p>
+            I specialise in geospatial analysis, sustainable crop management and plant stress
+            physiology, working with QGIS, ArcGIS, Google Earth Engine, Python and R. My work spans
+            environmental science, natural resource management and remote sensing for agricultural
+            and environmental sustainability.
+          </p>
+          <p>
+            I want to advance interdisciplinary research in climate-smart agriculture, environmental
+            monitoring and ecosystem management, combining remote sensing, machine learning and
+            environmental impact assessment.
+          </p>
+          <ul class="tags">
+            <li>Precision Agriculture</li><li>UAV Remote Sensing</li><li>GIS</li><li>Plant Stress Physiology</li><li>Climate-Smart Agriculture</li><li>Machine Learning</li><li>Agroforestry</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ RESEARCH / FIELD WORK ═══════ -->
+    <section id="research" class="section section-alt">
+      <div class="container">
+        <span class="section-label reveal">02 — Research</span>
+        <h2 class="section-title reveal">Field work &amp; research</h2>
+
+        <article class="study reveal">
+          <div class="study-head">
+            <span class="status">Unpublished · preliminary 2024 season</span>
+            <h3>UAV-based yield prediction and phenology of wheat under drought and irrigation</h3>
+            <p class="muted">
+              How seaweed extract and nitrogen fertiliser shape wheat (BWMRI Gom-1) growth and yield under
+              drought and full irrigation, tracked through a season of multispectral drone flights and
+              modelled with vegetation indices, double-logistic phenology curves and machine learning.
+            </p>
+            <ul class="study-facts">
+              <li><strong>96</strong> field plots</li>
+              <li><strong>11</strong> UAV flights</li>
+              <li><strong>20+</strong> vegetation indices</li>
+              <li><strong>24</strong> treatment combinations</li>
+            </ul>
+          </div>
+
+          <div class="study-body">
+            <ul class="highlights">
+              <li><span>🛰️</span><div><h4>Timing matters most</h4><p>Imagery from the grain-filling stage carries the strongest yield signal; early-season flights add little.</p></div></li>
+              <li><span>🔴</span><div><h4>Red-edge beats NDVI</h4><p>Red-edge indices such as MTCI and NDRE tracked plot-level yield better than classic NDVI.</p></div></li>
+              <li><span>💧</span><div><h4>Drought ends the season early</h4><p>Both regimes reach similar peak greenness, but drought brings senescence forward by about ten days.</p></div></li>
+              <li><span>🌾</span><div><h4>Grain filling drives yield</h4><p>The length of the grain-filling phase explains most of the yield gap; nitrogen and seaweed extract extend it by delaying senescence.</p></div></li>
+              <li><span>📈</span><div><h4>Simple, practical models</h4><p>A few vegetation indices from two well-timed flights, plus irrigation status, give reliable yield estimates.</p></div></li>
+            </ul>
+
+            <div class="figures">
+              <figure class="fig-wide">
+                <img src="images/research/wheat-ndvi-trajectory.jpg" alt="Season-long NDVI curves for irrigated and drought wheat, diverging after the grain-filling stage" loading="lazy" />
+                <figcaption>Seasonal canopy greenness (NDVI) under irrigation and drought: the curves split during grain filling.</figcaption>
+              </figure>
+              <figure>
+                <img src="images/research/wheat-phenology-phases.jpg" alt="Double-logistic curve divided into five phenology phases" loading="lazy" />
+                <figcaption>Five growth phases separated with a double-logistic model.</figcaption>
+              </figure>
+              <figure>
+                <img src="images/research/wheat-field-layout.png" alt="Randomised plot layout of the irrigated block" loading="lazy" />
+                <figcaption>Randomised plot layout (irrigated block; the drought block mirrors it).</figcaption>
+              </figure>
+            </div>
+          </div>
+          <p class="study-note">Preliminary results from the 2024 season. The analysis is being updated and has not yet been peer reviewed.</p>
+        </article>
+
+        <h3 class="sub-title reveal">Field studies</h3>
+        <div class="research-grid">
+          <article class="card rcard reveal">
+            <div class="rcard-head"><span class="rcard-ic">🌾</span><span class="when">2024 — Present</span></div>
+            <h3>Precision Wheat Cultivation</h3>
+            <p class="where">Research Fields, Gazipur Agricultural University</p>
+            <ul class="bullets">
+              <li>Monitoring heat and drought-induced stresses in wheat</li>
+              <li>UAV multispectral imaging for crop health assessment</li>
+              <li>Data collection for machine learning model development</li>
+            </ul>
+          </article>
+          <article class="card rcard reveal">
+            <div class="rcard-head"><span class="rcard-ic">🌊</span><span class="when">2024</span></div>
+            <h3>Seaweed Extract Research</h3>
+            <p class="where">Experimental Plots, GAU</p>
+            <ul class="bullets">
+              <li>Field assessment of seaweed extract for drought mitigation in groundnut</li>
+              <li>UAV-based remote sensing for plant stress monitoring</li>
+              <li>Yield evaluation under different treatments</li>
+            </ul>
+          </article>
+          <article class="card rcard reveal">
+            <div class="rcard-head"><span class="rcard-ic">🌽</span><span class="when">2024</span></div>
+            <h3>Maize Variety Trials</h3>
+            <p class="where">Research Station, Gazipur</p>
+            <ul class="bullets">
+              <li>UAV monitoring of eight promising maize varieties</li>
+              <li>Drought assessment using multispectral imaging</li>
+              <li>Yield performance analysis and variety selection</li>
+            </ul>
+          </article>
+          <article class="card rcard reveal">
+            <div class="rcard-head"><span class="rcard-ic">🔬</span><span class="when">2024</span></div>
+            <h3>Wheat Blast Disease Monitoring</h3>
+            <p class="where">Agricultural Fields, Bangladesh</p>
+            <ul class="bullets">
+              <li>Early detection of wheat blast using UAV technology</li>
+              <li>Disease severity assessment through multispectral analysis</li>
+              <li>Field data for disease progression modelling</li>
+            </ul>
+          </article>
+          <article class="card rcard reveal">
+            <div class="rcard-head"><span class="rcard-ic">🌱</span><span class="when">2023 — 2024</span></div>
+            <h3>Herbicide Efficiency Trials</h3>
+            <p class="where">Rice Fields, Bangladesh</p>
+            <ul class="bullets">
+              <li>Evaluation of herbicides for weed control in rice</li>
+              <li>Seasonal assessment over T. Aman and Boro seasons</li>
+              <li>Field data collection and yield impact analysis</li>
+            </ul>
+          </article>
+          <article class="card rcard reveal">
+            <div class="rcard-head"><span class="rcard-ic">🌳</span><span class="when">2024 — Present</span></div>
+            <h3>Agroforestry Systems Research</h3>
+            <p class="where">Various Field Sites</p>
+            <ul class="bullets">
+              <li>Field studies on agroforestry species interactions</li>
+              <li>Environmental impact assessment of different systems</li>
+              <li>Evaluation of soil and water conservation practices</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ SKILLS ═══════ -->
+    <section id="skills" class="section container">
+      <span class="section-label reveal">03 — Skills</span>
+      <h2 class="section-title reveal">Technical skills</h2>
+      <div class="skills-grid">
+        <div class="card skill reveal">
+          <div class="skill-ic">💻</div>
+          <h3>Programming</h3>
+          <p>Data analysis, automation and modelling.</p>
+          <ul class="tags"><li>R</li><li>Python</li><li>Julia</li></ul>
+        </div>
+        <div class="card skill reveal">
+          <div class="skill-ic">🗺️</div>
+          <h3>Geospatial</h3>
+          <p>Mapping, image processing and spatial analysis.</p>
+          <ul class="tags"><li>Pix4D</li><li>QGIS</li><li>ArcGIS Pro</li><li>Google Earth Engine</li></ul>
+        </div>
+        <div class="card skill reveal">
+          <div class="skill-ic">📈</div>
+          <h3>Simulation &amp; Analysis</h3>
+          <p>Crop models, statistics and predictive models.</p>
+          <ul class="tags"><li>DSSAT</li><li>Machine Learning</li><li>Statistical Analysis</li></ul>
+        </div>
+        <div class="card skill reveal">
+          <div class="skill-ic">🧰</div>
+          <h3>Tools &amp; Platforms</h3>
+          <p>Field operations, figures and writing.</p>
+          <ul class="tags"><li>UAV Operations</li><li>Adobe Illustrator</li><li>LaTeX / Overleaf</li><li>MS Excel</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ PROJECTS ═══════ -->
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <span class="section-label reveal">04 — Projects</span>
+        <h2 class="section-title reveal">Code &amp; data projects</h2>
+        <div class="project-controls reveal">
+          <div class="filters" id="filters"></div>
+          <label class="search">
+            <span aria-hidden="true">🔍</span>
+            <input type="search" id="project-search" placeholder="Search projects…" aria-label="Search projects" />
+          </label>
+        </div>
+        <div class="projects-grid" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- ═══════ PUBLICATIONS ═══════ -->
+    <section id="publications" class="section container">
+      <span class="section-label reveal">05 — Publications</span>
+      <h2 class="section-title reveal">Publications &amp; presentations</h2>
+
+      <div class="pub-group reveal">
+        <h3 class="pub-cat">Book chapters</h3>
+        <div class="pub">
+          <span class="pub-yr">2025</span>
+          <div>
+            <p><b>Milu, M. K. H.</b>, et al. Revolutionizing Environmental Monitoring with Cutting-Edge Imaging Technologies. In: Saritha, V., Pande, C. B., Singh, R., Shahid, M. (eds) <i>Remote Sensing for Environmental Monitoring</i>. Springer, Singapore.</p>
+            <a class="doi" href="https://doi.org/10.1007/978-981-96-5546-5_4" target="_blank" rel="noopener">doi.org/10.1007/978-981-96-5546-5_4</a>
+          </div>
+          <span class="status published">Published</span>
+        </div>
+        <div class="pub">
+          <span class="pub-yr">2025</span>
+          <p>Sen, S., Nesa, M. M., Ashiquzzaman, M., Tuhin, A., &amp; <b>Milu, M. K. H.</b> Challenges of unmanned aerial systems (UAS) in crop production. In P. K. Srivastava, S. K. Srivastava, &amp; G. P. Petropoulos (Eds.), <i>UAV Applications in Natural Resources</i>. Springer.</p>
+          <span class="status">Under review</span>
+        </div>
+      </div>
+
+      <div class="pub-group reveal">
+        <h3 class="pub-cat">Research papers</h3>
+        <div class="pub">
+          <span class="pub-yr">2025</span>
+          <p><b>Milu, M. K. H.</b>, et al. Efficiency of various herbicides for weed control in rice: A comprehensive evaluation over T. Aman and Boro seasons. <i>Bangladesh Agronomy Journal</i>.</p>
+          <span class="status">Submitted</span>
+        </div>
+        <div class="pub">
+          <span class="pub-yr">2025</span>
+          <p><b>Milu, M. K. H.</b>, et al. Impact of seaweed extract and nitrogen fertilizer on wheat growth and yield under drought and irrigated conditions using UAV technology and machine learning approaches.</p>
+          <span class="status">In preparation</span>
+        </div>
+        <div class="pub">
+          <span class="pub-yr">2024</span>
+          <p>Sen, S., Nesa, M. M., Tuhin, A. K., Tarun, J. A., Islam, M., <b>Milu, M. K. H.</b>, Rahman, M. F., Islam, T., &amp; Abdullah, H. M. Early detection and wheat blast disease severity assessment using UAV multispectral image analysis.</p>
+          <span class="status">In preparation</span>
+        </div>
+      </div>
+
+      <div class="pub-group reveal">
+        <h3 class="pub-cat">Conference presentations</h3>
+        <div class="pub">
+          <span class="pub-yr">2024</span>
+          <p>Heat and drought-induced stresses monitoring in precision wheat cultivation. With Islam M. S., Abdullah H. M., Rahman M. F., Tuhin A. K., et al. <i>23rd National &amp; 2nd International Conference of BSA</i>, Bangladesh Agricultural University, Mymensingh.</p>
+          <span class="status published">Presented</span>
+        </div>
+        <div class="pub">
+          <span class="pub-yr">2024</span>
+          <p>Seaweed extract for drought mitigation in groundnut: a UAV-based remote sensing assessment. With Nesa M. M., Sen S., Safa N. T., et al. <i>23rd National &amp; 2nd International Conference of BSA</i>, Bangladesh Agricultural University, Mymensingh.</p>
+          <span class="status published">Presented</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ EXPERIENCE ═══════ -->
+    <section id="experience" class="section section-alt">
+      <div class="container">
+        <span class="section-label reveal">06 — Experience</span>
+        <h2 class="section-title reveal">Experience &amp; education</h2>
+        <div class="exp-grid">
+          <div class="reveal">
+            <p class="tl-group">Experience</p>
+            <ol class="timeline">
+              <li>
+                <span class="when">Apr 2024 — Present</span>
+                <h3>Graduate Research Assistant</h3>
+                <p class="where">GIS and Remote Sensing Lab, Gazipur Agricultural University</p>
+                <ul class="bullets">
+                  <li>UAV-based crop monitoring and precision agriculture research, using Pix4D and Emlid Flow for flight planning and data processing</li>
+                  <li>Geospatial analysis (NDVI, EVI) in QGIS, ArcGIS and Google Earth Engine to assess crop health and environmental conditions</li>
+                </ul>
+              </li>
+              <li>
+                <span class="when">Apr 2024 — Present</span>
+                <h3>Teaching Assistant</h3>
+                <p class="where">GIS and Remote Sensing Lab, Gazipur Agricultural University</p>
+                <ul class="bullets">
+                  <li>Support undergraduate and MS students with GIS and remote sensing in QGIS, ArcGIS, Google Earth Engine and Pix4D</li>
+                  <li>Guide students in UAV crop monitoring, drone piloting and image processing</li>
+                </ul>
+              </li>
+              <li>
+                <span class="when">Jan 2016 — Present</span>
+                <h3>Director</h3>
+                <p class="where">Hasan's Window Educational Platform, Rangpur</p>
+                <ul class="bullets">
+                  <li>Lead an online and offline platform tutoring students across multiple levels</li>
+                  <li>Run GIS and remote sensing courses, including international classes over Google Meet</li>
+                </ul>
+              </li>
+            </ol>
+
+            <p class="tl-group">Education</p>
+            <ol class="timeline">
+              <li>
+                <span class="when">Sep 2024 — Dec 2025 (Expected)</span>
+                <h3>MS, Agroforestry and Environment</h3>
+                <p class="where">Gazipur Agricultural University · GPA 3.49 / 4.00</p>
+              </li>
+              <li>
+                <span class="when">Mar 2019 — May 2023</span>
+                <h3>BSc in Agriculture</h3>
+                <p class="where">Gazipur Agricultural University · GPA 3.55 / 4.00</p>
+              </li>
+            </ol>
+          </div>
+          <div class="side-box reveal">
+            <p class="side-title">Awards &amp; achievements</p>
+            <div class="award"><span>🏆</span><div><h4>National Science and Technology Fellowship</h4><p>Ministry of Science and Technology, Government of Bangladesh · 2024</p></div></div>
+            <div class="award"><span>🎓</span><div><h4>General Merit Scholarship</h4><p>Gazipur Agricultural University · 2019 — 2025</p></div></div>
+            <div class="award"><span>🥈</span><div><h4>1st Runner-up, Poster Showcase</h4><p>Climate Smart Agriculture Quest 2023, GAU</p></div></div>
+            <div class="award"><span>🔭</span><div><h4>Rangpur District Champion</h4><p>37th National Science &amp; Technology Fair 2016</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ CERTIFICATIONS ═══════ -->
+    <section id="certifications" class="section container">
+      <span class="section-label reveal">07 — Certifications</span>
+      <h2 class="section-title reveal">Certifications &amp; training</h2>
+      <div class="cert-grid">
+        <div class="card cert reveal">
+          <span class="when">Jul 2025 — Present</span>
+          <h3>Introduction to GIS Programming</h3>
+          <p class="cert-org">Qiusheng Wu · Gazipur Agricultural University</p>
+          <p>Python scripting, automation and spatial data processing for GIS.</p>
+        </div>
+        <div class="card cert reveal">
+          <span class="when">Aug 2025</span>
+          <h3>Coordinate Reference Systems &amp; Projections</h3>
+          <p class="cert-org">Geo University</p>
+          <p>Coordinate systems, map projections and spatial data representation.</p>
+        </div>
+        <div class="card cert reveal">
+          <span class="when">Aug 2025</span>
+          <h3>Sentinel Hub Webinar Series</h3>
+          <p class="cert-org">Geo University</p>
+          <p>Using Sentinel Hub for satellite data analysis in geospatial projects.</p>
+        </div>
+        <div class="card cert reveal">
+          <span class="when">Jul 2024</span>
+          <h3>DJI Matrice 350 RTK &amp; LiDAR Training</h3>
+          <p class="cert-org">GIS and Remote Sensing Lab, GAU</p>
+          <p>Hands-on drone and LiDAR operation, flight planning, data acquisition and 3D modelling.</p>
+        </div>
+        <div class="card cert reveal">
+          <span class="when">May 2024</span>
+          <h3>Orthorectification of Aerial Imagery</h3>
+          <p class="cert-org">Geo University</p>
+          <p>Correcting aerial imagery to produce accurate geospatial data for mapping.</p>
+        </div>
+        <div class="card cert reveal">
+          <span class="when">May 2024</span>
+          <h3>Introduction to LiDAR</h3>
+          <p class="cert-org">NOAA</p>
+          <p>LiDAR fundamentals for high-precision geospatial data collection and analysis.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ GALLERY ═══════ -->
+    <section id="gallery" class="section section-alt" hidden>
+      <div class="container">
+        <span class="section-label reveal">08 — Gallery</span>
+        <h2 class="section-title reveal">In the field</h2>
+        <div class="gallery" id="gallery-grid"></div>
+      </div>
+    </section>
+    <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+      <button class="lb-close" aria-label="Close">×</button>
+      <img alt="" />
+      <p class="lb-caption"></p>
+    </dialog>
+
+    <!-- ═══════ CTA ═══════ -->
+    <section class="container">
+      <div class="cta reveal">
+        <div>
+          <p class="hero-tag light"><span class="dot"></span> Open to collaboration</p>
+          <h3>Working on UAV, GIS or climate-smart agriculture research?</h3>
+          <p>I'm open to research collaborations, graduate opportunities, and GIS and remote sensing training. Let's talk.</p>
+        </div>
+        <a href="#contact" class="btn btn-light">Get in touch →</a>
+      </div>
+    </section>
+
+    <!-- ═══════ CONTACT ═══════ -->
+    <section id="contact" class="section container">
+      <span class="section-label reveal">09 — Contact</span>
+      <h2 class="section-title reveal">Get in touch</h2>
+      <div class="contact-grid">
+        <div class="reveal">
+          <p class="muted">Questions, collaborations, or opportunities: my inbox is always open.</p>
+          <dl class="clines">
+            <div><dt>Email</dt><dd><a href="mailto:khalid.official.98@gmail.com">khalid.official.98@gmail.com</a></dd></div>
+            <div><dt>Location</dt><dd>Gazipur, Bangladesh</dd></div>
+            <div><dt>Scholar</dt><dd><a href="https://scholar.google.com/citations?hl=en&amp;user=97pu-5AAAAAJ" target="_blank" rel="noopener">Google Scholar profile ↗</a></dd></div>
+            <div><dt>ORCID</dt><dd><a href="https://orcid.org/0009-0008-5927-5814" target="_blank" rel="noopener">0009-0008-5927-5814 ↗</a></dd></div>
+            <div><dt>ResearchGate</dt><dd><a href="https://www.researchgate.net/profile/Md-Khalid-Hasan-Milu" target="_blank" rel="noopener">ResearchGate profile ↗</a></dd></div>
+            <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/md-khalid-hasan-milu-352355145/" target="_blank" rel="noopener">LinkedIn profile ↗</a></dd></div>
+            <div><dt>GitHub</dt><dd><a href="https://github.com/milukhalidhasan" target="_blank" rel="noopener">github.com/milukhalidhasan ↗</a></dd></div>
+          </dl>
+          <p class="muted refs">References available on request.</p>
+        </div>
+        <form class="contact-form card reveal" data-email="khalid.official.98@gmail.com">
+          <label>Name<input type="text" name="name" required /></label>
+          <label>Email<input type="email" name="email" required /></label>
+          <label>Message<textarea name="message" rows="5" required></textarea></label>
+          <button type="submit" class="btn btn-primary">Send message</button>
+          <p class="form-note" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="f-name">Md. Khalid Hasan Milu<span>.</span></p>
+        <p class="f-sub">Agroforestry &amp; Environmental Researcher · GIS &amp; Remote Sensing</p>
+      </div>
+      <div class="f-social">
+        <a href="https://scholar.google.com/citations?hl=en&amp;user=97pu-5AAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://orcid.org/0009-0008-5927-5814" target="_blank" rel="noopener">ORCID</a>
+        <a href="https://www.researchgate.net/profile/Md-Khalid-Hasan-Milu" target="_blank" rel="noopener">ResearchGate</a>
+        <a href="https://www.linkedin.com/in/md-khalid-hasan-milu-352355145/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/milukhalidhasan" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:khalid.official.98@gmail.com">Email</a>
+      </div>
+    </div>
+    <div class="container f-bottom">
+      <p>© <span id="year"></span> Md. Khalid Hasan Milu</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
