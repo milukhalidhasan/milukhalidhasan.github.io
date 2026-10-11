@@ -1,0 +1,195 @@
+/* Design version 1: Terracotta. Colours, fonts and layout changes on top of styles.css. */
+:root {
+  /* Georgia on Windows, macOS and iOS; Gelasio (same letter widths, bundled in fonts/) elsewhere */
+  --font-display: Georgia, "Gelasio", "Times New Roman", serif;
+  --font-body: Georgia, "Gelasio", "Times New Roman", serif;
+  --drone-offset: 78;
+  --bg: #ffffff;
+  --bg-alt: #efe7de;
+  --surface: #ffffff;
+  --cream: #f6f1ea;
+  --text: #2a1a17;
+  --muted: #574741;
+  --border: #e6dacf;
+  --lime: #7a1f18;
+  --lime-strong: #5f150f;
+  --lime-soft: #f5e9df;
+  --on-lime: #ffffff;
+  --green: #8a2a1c;
+  --green-deco: #c8643c;
+  --tag-text: #7a2a1c;
+  --ink: #7a1f18;
+  --on-ink: #ffffff;
+  --panel: #3a2220;
+  --sky-1: #a84a22;
+  --sky-2: #c96f38;
+  --sky-3: #e0a062;
+  --hill-1: #8d3f1e;
+  --hill-2: #6b2c14;
+  --ghost: rgba(255, 255, 255, 0.95);
+  --nav-bg: #ffffff;
+  --nav-border: transparent;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a1210;
+    --bg-alt: #221714;
+    --surface: #2a1c18;
+    --cream: #140d0b;
+    --text: #f4eae3;
+    --muted: #cdbcb2;
+    --border: #3b2a25;
+    --lime: #e9905a;
+    --lime-strong: #f0a271;
+    --lime-soft: rgba(233, 144, 90, 0.14);
+    --on-lime: #1a1210;
+    --green: #f2a877;
+    --green-deco: #d0703f;
+    --tag-text: #f6c9a8;
+    --ink: #e9905a;
+    --on-ink: #1a1210;
+    --panel: #120b09;
+    --sky-1: #4f200f;
+    --sky-2: #7a3618;
+    --sky-3: #a85a2c;
+    --hill-1: #4a1f10;
+    --hill-2: #35150b;
+    --ghost: rgba(255, 255, 255, 0.05);
+    --nav-bg: #2a1c18;
+    --nav-border: #3b2a25;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1a1210;
+  --bg-alt: #221714;
+  --surface: #2a1c18;
+  --cream: #140d0b;
+  --text: #f4eae3;
+  --muted: #cdbcb2;
+  --border: #3b2a25;
+  --lime: #e9905a;
+  --lime-strong: #f0a271;
+  --lime-soft: rgba(233, 144, 90, 0.14);
+  --on-lime: #1a1210;
+  --green: #f2a877;
+  --green-deco: #d0703f;
+  --tag-text: #f6c9a8;
+  --ink: #e9905a;
+  --on-ink: #1a1210;
+  --panel: #120b09;
+  --sky-1: #4f200f;
+  --sky-2: #7a3618;
+  --sky-3: #a85a2c;
+  --hill-1: #4a1f10;
+  --hill-2: #35150b;
+  --ghost: rgba(255, 255, 255, 0.05);
+  --nav-bg: #2a1c18;
+  --nav-border: #3b2a25;
+}
+
+/* ═══════ VERSION 1 · TERRACOTTA ═══════
+   Warm cream and beige surfaces, deep burgundy buttons, a terracotta hero, and very large
+   faded words behind the section headings. Loaded after styles.css, which it overrides. */
+h1, h2, h3, h4 { letter-spacing: -0.005em; }
+.section-title { font-weight: 500; }
+.section-title em { font-style: normal; color: var(--green); }
+.card h3, .study-head h3, .timeline h3, .cert h3, .ref h3 { font-weight: 600; }
+.card { box-shadow: none; }
+
+/* Hero: sunset sky over ripe wheat */
+.hero {
+  background:
+    radial-gradient(60% 55% at 80% 6%, rgba(255, 216, 164, 0.42), transparent 70%),
+    radial-gradient(95% 34% at 18% 100%, var(--hill-1) 0 50%, transparent 50.3%),
+    radial-gradient(85% 30% at 88% 106%, var(--hill-2) 0 50%, transparent 50.3%),
+    linear-gradient(165deg, var(--sky-1) 0%, var(--sky-2) 52%, var(--sky-3) 100%);
+}
+.hero::before {
+  content: "remote\A sensing"; white-space: pre; text-align: right;
+  position: absolute; right: 1vw; bottom: 56px; pointer-events: none;
+  font: 600 clamp(5rem, 15vw, 14rem) / 0.82 var(--font-display); letter-spacing: -0.035em;
+  color: transparent; background: linear-gradient(180deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0) 88%);
+  -webkit-background-clip: text; background-clip: text;
+}
+.grad { color: #ffe2b8; }
+.hero-tag .dot { background: #ffe2b8; }
+.hero .btn-primary, .btn-light { background: #fff; color: #6b1a12; }
+.hero .btn-primary:hover, .btn-light:hover { background: #ffeeda; }
+.hero-links a:hover { border-color: #fff; }
+.portrait-frame { border: 0; border-radius: 28px; background: linear-gradient(135deg, #f1c9a0, #c8643c); box-shadow: 0 40px 70px -34px rgba(60, 15, 5, 0.75); }
+.plot { fill: #e3b24c; stroke: rgba(255, 255, 255, 0.3); }
+.plot-rows { stroke: rgba(120, 66, 12, 0.35); }
+.scan-bed { fill: #6a3518; }
+.blade { fill: #f0d78a; }
+.canopy { fill: rgba(64, 22, 8, 0.6); }
+.canopy-b { fill: rgba(64, 22, 8, 0.42); }
+.trunk { stroke: rgba(64, 22, 8, 0.7); }
+#beam-grad stop { stop-color: #fff1cf; }
+#scan-line { stroke: #fff1cf; }
+
+/* Big burgundy numbers in place of icon tiles */
+.stat-ic { display: none; }
+.stat { padding: 26px 24px; }
+.stat strong { color: var(--green); font-size: 2.5rem; font-weight: 500; letter-spacing: -0.01em; }
+
+/* Section headings: centred, under a very large faded word */
+.section > .section-label, .section > .container > .section-label { display: flex; width: fit-content; margin-inline: auto; }
+.section > .section-title, .section > .container > .section-title { text-align: center; }
+.section-label { background: transparent; border-color: color-mix(in srgb, var(--green-deco) 50%, transparent); color: var(--green); }
+.gallery-filters { justify-content: center; }
+.section-alt { position: relative; overflow: hidden; background-image: none; padding-top: clamp(104px, 12.5vw, 172px); }
+.section-alt > .container { position: relative; z-index: 1; }
+.section-alt::before {
+  position: absolute; left: 50%; top: 4px; transform: translateX(-50%); pointer-events: none; white-space: nowrap;
+  font: 600 clamp(5rem, 15vw, 13.5rem) / 1 var(--font-display); letter-spacing: -0.035em;
+  color: transparent; background: linear-gradient(180deg, var(--ghost), transparent 86%);
+  -webkit-background-clip: text; background-clip: text;
+}
+#research::before { content: "research"; }
+#experience::before { content: "journey"; }
+#projects::before { content: "projects"; }
+#gallery::before { content: "gallery"; }
+#references::before { content: "referees"; }
+
+.timeline > li::before { background: var(--green-deco); }
+.side-title { color: #f0b48a; }
+.award > span { background: rgba(240, 180, 138, 0.14); color: #f0b48a; }
+.cta { border-radius: 32px; }
+
+/* Footer in dark maroon */
+.site-footer { background: var(--panel); color: rgba(255, 255, 255, 0.62); border-top: 0; }
+.site-footer::before { display: none; }
+.f-name { color: #fff; }
+.footer-inner { border-bottom-color: rgba(255, 255, 255, 0.12); }
+.f-social a { background: transparent; border-color: rgba(255, 255, 255, 0.22); color: #fff; }
+.f-social a:hover { background: #fff; border-color: #fff; color: #3a2220; }
+.f-bottom a { color: #f0b48a; }
+
+/* ═══════ FLOATING NAVIGATION ═══════
+   The menu is a rounded bar that floats over the page instead of a full-width strip. */
+html { scroll-padding-top: 96px; }
+.site-header {
+  position: fixed; left: 0; right: 0; top: 0; padding-top: 14px; pointer-events: none;
+  background: none; border: 0; -webkit-backdrop-filter: none; backdrop-filter: none;
+}
+.site-header.scrolled { box-shadow: none; }
+.nav {
+  pointer-events: auto; height: 60px; padding: 0 10px 0 24px; border-radius: 999px;
+  background: var(--nav-bg); border: 1px solid var(--nav-border);
+  box-shadow: 0 14px 34px -18px rgba(0, 0, 0, 0.45);
+}
+#scroll-progress { z-index: 60; }
+.hero { padding-top: 176px; }
+@media (max-width: 900px) {
+  :root { --drone-offset: 62; }
+  .hero { padding-top: 150px; }
+  .nav { padding-left: 20px; }
+  .nav-links {
+    top: 84px; left: 16px; right: 16px; pointer-events: auto; border-radius: 22px;
+    background: var(--nav-bg); border: 1px solid var(--nav-border); box-shadow: var(--shadow-lg);
+  }
+}
+
+/* The name stays on one line: sized from the space beside the photo */
+.hero h1 { font-size: min(4.0rem, calc((100vw - 88px - var(--frame)) / 10.55)); }
+@media (max-width: 900px) { .hero h1 { font-size: min(3.2rem, calc((100vw - 32px) / 10.79)); } }
