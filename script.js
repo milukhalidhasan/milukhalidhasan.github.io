@@ -1,80 +1,32 @@
 // ═══════ PROJECTS ═══════
 // Edit this list to add, remove or change projects. Each one becomes a card.
-// cat: one of the keys in CATEGORIES below. img: optional screenshot path.
+// The same cards are written into index.html, so they show without JavaScript: keep the two in step.
+// cat: one of the keys in CATEGORIES below. img: optional screenshot path. year, featured: optional.
 // icon: shown when there is no screenshot; any icon name from the sprite in index.html (without "i-").
 const GH = "https://github.com/milukhalidhasan/";
 const PROJECTS = [
   {
-    title: "Tomato Leaf Disease Classification",
-    year: "2026",
+    title: "UAV phenology and drought-stress phenotyping in wheat",
+    cat: "uav",
+    icon: "curve",
+    hue: 100,
+    desc: "Python + R; double-logistic curve fitting, cross-season yield models, drought classifier, thermal analysis; runs on synthetic demo data.",
+    tags: ["Python", "R", "Double-logistic curve fitting", "Thermal analysis"],
+    code: GH + "uav-wheat-drought-phenology",
+  },
+  {
+    title: "Tomato leaf disease classifier",
     cat: "ml",
     icon: "leaf-scan",
     hue: 140,
     img: "images/project-tomato.jpg",
-    desc: "A MobileNetV2 transfer-learning model that identifies 10 tomato leaf conditions from a photo with ~91% validation accuracy, served through a Gradio upload-and-classify app.",
-    tags: ["Python", "TensorFlow", "MobileNetV2", "Gradio"],
+    desc: "MobileNetV2 transfer learning with a Gradio interface; EDGE Applied ML course project.",
+    tags: ["MobileNetV2", "Transfer learning", "Gradio"],
     code: GH + "tomato-leaf-disease-classification",
-    featured: true,
-  },
-  {
-    title: "Asian Rice Production Dashboard",
-    year: "2026",
-    cat: "data",
-    icon: "chart",
-    hue: 90,
-    img: "images/project-rice.jpg",
-    desc: "An interactive FAOSTAT dashboard covering 35 Asian countries from 1961 to 2024: production, yield and area trends, country rankings, growth index and decade snapshots.",
-    tags: ["JavaScript", "Chart.js", "FAOSTAT", "Data Viz"],
-    code: GH + "Asian-Rice-Production-Overview-1961-2024-FAOSTAT",
-    featured: true,
-  },
-  {
-    title: "Age Calculator — Android App",
-    year: "2026",
-    cat: "mobile",
-    icon: "phone",
-    hue: 235,
-    img: "images/project-age.jpg",
-    desc: "A date-to-date age calculator with a calendar picker, totals down to the second, birth weekday, zodiac sign and a next-birthday countdown, with light and dark themes.",
-    tags: ["Kotlin", "Jetpack Compose", "Material 3"],
-    code: GH + "age-calculator",
-  },
-  {
-    title: "Hand Raise Detector",
-    year: "2025",
-    cat: "ml",
-    icon: "camera",
-    hue: 25,
-    desc: "A webcam tool that uses OpenCV motion detection to spot a raised hand and automatically capture a photo, with a delay between shots.",
-    tags: ["Python", "OpenCV", "NumPy"],
-    code: GH + "hand-raise-detector",
-  },
-  {
-    title: "Justice Squad 3D",
-    year: "2026",
-    cat: "games",
-    icon: "code",
-    hue: 260,
-    img: "images/project-justice.jpg",
-    desc: "An arcade 3D light-gun shooter for the browser and Android: five stages, five named bosses and a final helicopter fight. Built on three.js with no game engine, with every texture, sound and music track generated in code.",
-    tags: ["JavaScript", "three.js", "WebGL", "Android"],
-    code: GH + "justice-squad",
-  },
-  {
-    title: "Khalid's Treasure Hunt",
-    year: "2026",
-    cat: "games",
-    icon: "globe",
-    hue: 30,
-    img: "images/project-hunt.jpg",
-    desc: "A children's treasure hunt in a 3D village house built from a real, measured floor plan. Explore the rooms, verandah and yard with Khalid and his dog Bhulu, in English or Bengali, in the browser or as an offline Android app.",
-    tags: ["JavaScript", "three.js", "Python", "Android"],
-    demo: "https://milukhalidhasan.github.io/khalids-hunt/",
-    code: GH + "khalids-hunt",
   },
 ];
 
-const CATEGORIES = { all: "All", ml: "AI & ML", data: "Web & Data", games: "3D games", mobile: "Android" };
+const CATEGORIES = { all: "All", uav: "UAV phenotyping", ml: "Computer vision" };
 
 // ═══════ PROJECT RENDERING ═══════
 const grid = document.getElementById("projects-grid");
@@ -105,7 +57,7 @@ function renderProjects() {
   const list = PROJECTS.filter(
     (p) =>
       (activeCat === "all" || p.cat === activeCat) &&
-      (!q || [p.title, p.desc, p.year, ...p.tags].join(" ").toLowerCase().includes(q))
+      (!q || [p.title, p.desc, p.year || "", ...p.tags].join(" ").toLowerCase().includes(q))
   );
   grid.innerHTML = list.length
     ? list
@@ -117,7 +69,7 @@ function renderProjects() {
           ${p.img ? `<img src="${p.img}" alt="Screenshot of ${escapeHtml(p.title)}" onerror="this.remove()">` : ""}
         </div>
         <div class="project-body">
-          <div class="project-meta"><span>${p.year}</span>${p.featured ? '<span class="badge">★ Featured</span>' : ""}</div>
+          ${p.year || p.featured ? `<div class="project-meta"><span>${p.year || ""}</span>${p.featured ? '<span class="badge">★ Featured</span>' : ""}</div>` : ""}
           <h3>${escapeHtml(p.title)}</h3>
           <p>${escapeHtml(p.desc)}</p>
           <ul class="tags">${p.tags.map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ul>
@@ -132,9 +84,6 @@ function renderProjects() {
     : '<p class="empty">No projects match your search.</p>';
 }
 renderProjects();
-
-// ═══════ FOOTER YEAR ═══════
-document.getElementById("year").textContent = new Date().getFullYear();
 
 // ═══════ MOBILE MENU ═══════
 const navToggle = document.querySelector(".nav-toggle");
@@ -236,8 +185,10 @@ form.addEventListener("submit", (e) => {
 });
 
 // ═══════ GALLERY ═══════
-// Add images to images/gallery/ and list them here. Missing files are skipped,
-// and the whole section stays hidden until at least one image loads.
+// The Gallery section is currently removed from index.html; this list still feeds the photo strip.
+// To bring the section back, restore its markup (section#gallery with #gallery-grid and #gallery-filters)
+// and the nav link (li.nav-gallery); the code below fills it again. Missing files are skipped,
+// and the section stays hidden until at least one image loads.
 // cat:   one of the keys in GALLERY_CATS below ("fig" tiles show the whole chart, uncropped).
 // thumb: optional smaller copy for the grid; leave it out to use src.
 // shape: "tall" (1×2), "wide" (2×1), "big" (2×2) or "full" (whole row); leave it out for one cell.
@@ -288,8 +239,8 @@ const GALLERY = [
   figure("fig-when-to-fly", "When to fly: correlation of each vegetation index with grain yield, by flight date", "wide"),
   figure("fig-treatment-response", "Yield and yield components by nitrogen rate and water regime (mean ± 95% CI)", "wide"),
   figure("fig-auc-vs-yield", "Area under the vegetation-index curve against grain yield, by index", "wide"),
-  figure("fig-predictor-blocks", "Predictor blocks compared: R² of the best grain-yield model within each season", "wide"),
-  figure("fig-validation-schemes", "Best achievable R² for grain yield, by predictor set and validation scheme", "wide"),
+  figure("fig-predictor-blocks", "Predictor blocks compared: how well the best grain-yield model performs within each season", "wide"),
+  figure("fig-validation-schemes", "Grain-yield model performance by predictor set and validation scheme", "wide"),
 ];
 
 const GALLERY_CATS = { all: "All", uav: "UAV & mapping", field: "Field work", fig: "Analysis figures" };
@@ -343,7 +294,7 @@ function renderGalleryFilters() {
     })
     .join("");
 }
-galleryFilters.addEventListener("click", (e) => {
+if (gallerySection) galleryFilters.addEventListener("click", (e) => {
   const btn = e.target.closest(".filter");
   if (!btn) return;
   galleryCat = btn.dataset.cat;
@@ -351,7 +302,7 @@ galleryFilters.addEventListener("click", (e) => {
   [...galleryGrid.children].forEach((b) => (b.hidden = galleryCat !== "all" && GALLERY[b.dataset.i].cat !== galleryCat));
 });
 
-GALLERY.forEach((item, i) => {
+if (gallerySection) GALLERY.forEach((item, i) => {
   const img = new Image();
   img.alt = item.caption;
   img.decoding = "async";
@@ -374,7 +325,7 @@ GALLERY.forEach((item, i) => {
     const next = [...galleryGrid.children].find((c) => +c.dataset.i > i);
     galleryGrid.insertBefore(btn, next || null);
     gallerySection.hidden = false;
-    document.querySelector(".nav-gallery").classList.add("show");
+    document.querySelector(".nav-gallery")?.classList.add("show");
     renderGalleryFilters();
   };
   // No preview file: fall back to the full image
@@ -388,7 +339,7 @@ GALLERY.forEach((item, i) => {
 });
 
 // ═══════ PHOTO STRIP ═══════
-// The gallery's photos (not the charts) drift right to left below the About section,
+// The GALLERY list's photos (not the charts) drift right to left below the About section,
 // alternating UAV and field shots. It pauses on hover, and a photo opens in the viewer.
 // It stays hidden until its images have loaded, so the loop starts at its final width.
 const strip = document.getElementById("photo-strip");

@@ -1,20 +1,21 @@
 # Md. Khalid Hasan Milu — Portfolio
 
-Personal research portfolio focused on GIS and remote sensing: UAV and satellite imagery, photogrammetry,
-vegetation-index time series and machine learning for precision agriculture. Plain HTML, CSS and JavaScript,
-no build step.
+Personal research portfolio: UAV plant phenotyping, crop drought stress and machine learning.
+The content follows the CV (October 2026). Plain HTML, CSS and JavaScript, no build step.
 
 ## Sections
-1. **About**: profile and next research goal
+1. **About**: profile and research interests
 2. **Research**: current projects, the featured MS thesis study and earlier field studies
-3. **Publications**: journal articles, book chapter, manuscripts under review and conference talks
+3. **Publications**: in preparation, book chapter, journal articles and manuscripts under review
 4. **Experience**: roles, education, awards and languages
-5. **Skills**: field and lab methods, statistics, UAV and remote sensing, programming
-6. **Projects**: GitHub projects, filterable and searchable
-7. **Training**: courses and certificates
-8. **Gallery**: field photos, UAV maps and analysis figures, with filters and a full-screen viewer
-9. **Contact**: email, academic profiles and a contact form
-10. **References**: referees
+5. **Skills**: remote sensing and UAV, programming and ML, design and statistics, crop physiology
+6. **Projects**: code and data projects on GitHub, filterable and searchable
+7. **Training**: courses
+8. **Contact**: email, ORCID, Google Scholar, LinkedIn, GitHub and a contact form
+9. **References**: referees' names, roles and institutions (contact details on request)
+
+The Gallery section is removed for now; its images stay in `images/gallery/` and still feed the photo strip.
+No phone numbers or referee email addresses appear on the site.
 
 Also: animated drone survey in the hero, light/dark mode, structured data for search engines,
 a skip link and print styles.
@@ -44,16 +45,19 @@ Open `index.html` in your browser.
 ## Editing content
 - **Text, publications, experience, certifications and awards**: edit `index.html`. Each section is
   marked with a `═══════ SECTION NAME ═══════` comment.
-- **Gallery**: put images in `images/gallery/`, with a smaller copy of the same name in
-  `images/gallery/thumbs/`, and list them in `GALLERY` in `script.js` with `photo(file, cat, caption, options)`.
+- **Gallery** (removed for now; to restore it, put back the `section#gallery` markup and the `nav-gallery` link,
+  see the comment above `GALLERY` in `script.js`): put images in `images/gallery/`, with a smaller copy of the
+  same name in `images/gallery/thumbs/`, and list them in `GALLERY` in `script.js` with `photo(file, cat, caption, options)`.
   `cat` is `uav`, `field` or `fig`; the options are `shape` (`tall`, `wide`, `big` or `full`) and `pos`, the
   focus point of the crop. Images that fail to load are skipped. The shapes are chosen so that each category
   fills whole rows of the four-column grid, so check the grid for gaps after adding one.
 - **Photo strip**: the row of photos that drifts right to left under About. It is built from the same
   `GALLERY` list (UAV and field photos, no charts), so new gallery photos join it automatically.
-- **Projects**: edit the `PROJECTS` list at the top of `script.js`. Copy an entry to add one. `icon` is the
-  icon shown when a project has no screenshot.
+- **Projects**: edit the `PROJECTS` list at the top of `script.js`, and the matching cards in the Projects
+  section of `index.html` (written there so they show without JavaScript). `icon` is the icon shown when a
+  project has no screenshot.
 - **Stats bar numbers**: the `data-target` values in the stats bar in `index.html`.
+- **Footer year**: written in the footer of `index.html`.
 - **Portrait**: `images/portrait.jpg`.
 - **Fonts**: Georgia for all text (set in `--font-display` and `--font-body` in `theme.css`). Devices without
   Georgia (most Android phones and Linux) get Gelasio, a free font with the same letter widths, from `fonts/`.
