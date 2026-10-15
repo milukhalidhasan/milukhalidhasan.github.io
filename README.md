@@ -1,20 +1,21 @@
 # Md. Khalid Hasan Milu — Portfolio
 
-Personal research portfolio: UAV plant phenotyping, crop drought stress and machine learning.
-The content follows the CV (October 2026). Plain HTML, CSS and JavaScript, no build step.
+Personal research portfolio: UAV plant phenotyping, crop drought stress and machine learning, with GIS and
+remote sensing (UAV and satellite imagery, photogrammetry, vegetation-index time series). The facts follow the
+CV of October 2026. Plain HTML, CSS and JavaScript, no build step.
 
 ## Sections
-1. **About**: profile and research interests
+1. **About**: profile, current focus and research interests
 2. **Research**: current projects, the featured MS thesis study and earlier field studies
-3. **Publications**: in preparation, book chapter, journal articles and manuscripts under review
+3. **Publications**: journal articles, book chapter, manuscripts under review and in preparation, and conference talks
 4. **Experience**: roles, education, awards and languages
-5. **Skills**: remote sensing and UAV, programming and ML, design and statistics, crop physiology
-6. **Projects**: code and data projects on GitHub, filterable and searchable
-7. **Training**: courses
-8. **Contact**: email, ORCID, Google Scholar, LinkedIn, GitHub and a contact form
-9. **References**: referees' names, roles and institutions (contact details on request)
+5. **Skills**: field and lab methods, statistics, UAV and remote sensing, programming
+6. **Projects**: GitHub projects, filterable and searchable
+7. **Training**: courses and certificates
+8. **Gallery**: field photos, UAV maps and analysis figures, with filters and a full-screen viewer
+9. **Contact**: email, academic profiles and a contact form
+10. **References**: referees' names, roles and institutions (contact details on request)
 
-The Gallery section is removed for now; its images stay in `images/gallery/` and still feed the photo strip.
 No phone numbers or referee email addresses appear on the site.
 
 Also: animated drone survey in the hero, light/dark mode, structured data for search engines,
@@ -45,17 +46,16 @@ Open `index.html` in your browser.
 ## Editing content
 - **Text, publications, experience, certifications and awards**: edit `index.html`. Each section is
   marked with a `═══════ SECTION NAME ═══════` comment.
-- **Gallery** (removed for now; to restore it, put back the `section#gallery` markup and the `nav-gallery` link,
-  see the comment above `GALLERY` in `script.js`): put images in `images/gallery/`, with a smaller copy of the
-  same name in `images/gallery/thumbs/`, and list them in `GALLERY` in `script.js` with `photo(file, cat, caption, options)`.
+- **Gallery**: put images in `images/gallery/`, with a smaller copy of the same name in
+  `images/gallery/thumbs/`, and list them in `GALLERY` in `script.js` with `photo(file, cat, caption, options)`.
   `cat` is `uav`, `field` or `fig`; the options are `shape` (`tall`, `wide`, `big` or `full`) and `pos`, the
   focus point of the crop. Images that fail to load are skipped. The shapes are chosen so that each category
   fills whole rows of the four-column grid, so check the grid for gaps after adding one.
 - **Photo strip**: the row of photos that drifts right to left under About. It is built from the same
   `GALLERY` list (UAV and field photos, no charts), so new gallery photos join it automatically.
-- **Projects**: edit the `PROJECTS` list at the top of `script.js`, and the matching cards in the Projects
-  section of `index.html` (written there so they show without JavaScript). `icon` is the icon shown when a
-  project has no screenshot.
+- **Projects**: edit the `PROJECTS` list at the top of `script.js`. Copy an entry to add one. `icon` is the
+  icon shown when a project has no screenshot. Then run `node tools/render-projects.mjs`, which writes the same
+  cards into `index.html` so the projects are listed even when JavaScript is off.
 - **Stats bar numbers**: the `data-target` values in the stats bar in `index.html`.
 - **Footer year**: written in the footer of `index.html`.
 - **Portrait**: `images/portrait.jpg`.
@@ -68,4 +68,4 @@ Open `index.html` in your browser.
 Published at **https://milukhalidhasan.github.io/** from the `main` branch of
 [milukhalidhasan/milukhalidhasan.github.io](https://github.com/milukhalidhasan/milukhalidhasan.github.io).
 To update it, copy the site files there (`index.html`, `styles.css`, `theme.css`, `script.js`, `images/`,
-`fonts/`) and push to `main`; GitHub Pages republishes within a minute or two.
+`fonts/`, `tools/`) and push to `main`; GitHub Pages republishes within a minute or two.
